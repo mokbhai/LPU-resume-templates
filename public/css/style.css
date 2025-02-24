@@ -1,0 +1,376 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark theme variables */
+:root {
+  --bg-primary: #f0f2f5;
+  --bg-secondary: #fff;
+  --bg-tertiary: #f8fafc;
+  --text-primary: #333;
+  --text-secondary: #4a5568;
+  --text-tertiary: #2d3748;
+  --border-color: #e2e8f0;
+  --input-border: #cbd5e0;
+  --btn-primary: #4299e1;
+  --btn-secondary: #718096;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --bg-tertiary: #2c3e50;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #cbd5e0;
+  --border-color: #4a5568;
+  --input-border: #4a5568;
+  --btn-primary: #3182ce;
+  --btn-secondary: #4a5568;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.light-icon {
+  display: none;
+}
+
+[data-theme="dark"] .light-icon {
+  display: block;
+}
+
+[data-theme="dark"] .dark-icon {
+  display: none;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  color: #34495e;
+  margin: 1.5rem 0 1rem;
+  font-size: 1.4rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
+  transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #4299e1;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  min-width: 140px;
+}
+
+.btn:hover {
+  background-color: #3182ce;
+}
+
+.btn-secondary {
+  background-color: #718096;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.btn-secondary:hover {
+  background-color: #4a5568;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eee;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.experience-entry,
+.education-entry,
+.project-entry,
+.skill-entry,
+.certification-entry {
+  background-color: #f8fafc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.achievement-entry {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-entry input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.achievements-list {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px dashed #cbd5e0;
+}
+
+.remove-btn {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.remove-btn:hover {
+  background-color: #c53030;
+}
+
+.landing-content {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 3rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.template-option {
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.template-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.template-option h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.template-option p {
+  color: #4a5568;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.template-preview {
+  margin: 1.5rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.template-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.template-option ul {
+  text-align: left;
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  color: #4a5568;
+}
+
+.template-option li {
+  margin: 0.5rem 0;
+}
+
+.template-action {
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.import-section {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px dashed #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.import-section h3 {
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.import-section .btn {
+  cursor: pointer;
+}
+
+.format-info {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.format-info h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.format-info p {
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.format-info ul {
+  color: #4a5568;
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.format-info li {
+  margin: 0.5rem 0;
+}

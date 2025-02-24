@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="themeToggle" class="theme-toggle">
+        <span class="light-icon">🌞</span>
+        <span class="dark-icon">🌙</span>
+      </button>
+      <div class="landing-content">
+        <h1>Resume Generator</h1>
+        <p class="subtitle">
+          Create and customize your professional resume with ease
+        </p>
+        <div class="format-info">
+          <h3>📄 DOCX Format</h3>
+          <p>
+            Your resume will be generated as a Microsoft Word document (.docx),
+            giving you complete control to:
+          </p>
+          <ul>
+            <li>Make final adjustments to formatting</li>
+            <li>Customize fonts and styling</li>
+            <li>Add or modify sections</li>
+            <li>Save in different formats (PDF, etc.)</li>
+          </ul>
+        </div>
+        <div class="features">
+          <div class="import-section">
+            <h3>Have existing resume data?</h3>
+            <label for="importJson" class="btn btn-secondary"
+              >Import JSON</label
+            >
+            <input
+              type="file"
+              id="importJson"
+              accept=".json"
+              style="display: none"
+              onchange="handleFileImport(event)"
+            />
+          </div>
+          <div class="template-option">
+            <h3>General Resume</h3>
+            <div class="template-preview">
+              <img
+                src="/images/general-template-preview.png"
+                alt="General Resume Template"
+              />
+            </div>
+            <p>Perfect for most professional roles</p>
+            <ul>
+              <li>Clean and traditional layout</li>
+              <li>Emphasis on work experience</li>
+              <li>Balanced content sections</li>
+            </ul>
+            <div class="template-action">
+              <a href="/edit?template=general" class="btn"
+                >Use General Template</a
+              >
+            </div>
+          </div>
+
+          <div class="template-option">
+            <h3>Technical Resume</h3>
+            <div class="template-preview">
+              <img
+                src="/images/technical-template-preview.png"
+                alt="Technical Resume Template"
+              />
+            </div>
+            <p>Ideal for technical and specialized roles</p>
+            <ul>
+              <li>Highlights technical skills</li>
+              <li>Showcases projects prominently</li>
+              <li>Space for technical achievements</li>
+            </ul>
+            <div class="template-action">
+              <a href="/edit?template=technical" class="btn"
+                >Use Technical Template</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/form.js"></script>
+  </body>
+</html>

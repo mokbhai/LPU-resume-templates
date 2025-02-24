@@ -1,0 +1,145 @@
+{
+  "name": "Mokshit Jain",
+  "title": "Software Developer, IOT engineer",
+  "summary": "Results-driven computer science student graduating 2026. Delivered 5+ full-stack applications with focus on scalable architecture and real-time performance. Seeking software engineering internship.",
+  "contacts": {
+    "email": "mokshitjain18@gmail.com",
+    "phone": "+91-7000209021",
+    "linkedin": "linkedin.com/in/mokshit-jain",
+    "github": "github.com/mokbhai",
+    "website": "mokshitjain.netlify.app"
+  },
+  "educations": [
+    {
+      "degree": "Bachelor of Technology",
+      "major": "Computer Science",
+      "school": "Lovely Professional University",
+      "date": "2022 - 2026",
+      "gpa": "7.61/10.00",
+      "location": "LPU, Punjab, IN"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Developer",
+      "technologies": {
+        "label": "Technologies used:",
+        "items": "Nest.js, Next.js, PostgreSQL, Image Processing, Microservices architecture"
+      },
+      "company": "Innovation Studio & Ministry of Defense",
+      "date": "Nov 2024 - Jan 2025",
+      "location": "LPU, Punjab, IN",
+      "achievements": [
+        "Architected mission-critical vehicle management system, processing 10,000+ daily movements across 100+ checkpoints",
+        "Accelerated processing time from 48 hours to 5 minutes, boosting efficiency 85%",
+        "Decreased unauthorized access through implementation of MFA, session management, and role-based access controls"
+      ]
+    },
+    {
+      "role": "Project lead, Full Stack Developer",
+      "technologies": {
+        "label": "Technologies used:",
+        "items": "React.js, Node.js, Whatsapp bots, Microservices architecture"
+      },
+      "company": "Innovation Studio",
+      "date": "June 2024 - Aug 2024",
+      "location": "LPU, Punjab, IN",
+      "achievements": [
+        "Architected MERN-stack event platform increasing registration efficiency 80% and eliminating 15 hours weekly manual work",
+        "Delivered ₹1.5 lakh revenue through automated registration system, payment integration, and messaging APIs"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Thrombocizer",
+      "technologies": {
+        "label": "Technologies used:",
+        "items": "ESP32, Node.js, Websockets"
+      },
+      "role": "Developer",
+      "achievements": [
+        "Engineered real-time control platform managing 10,000 IoT devices with sub-second latency"
+      ],
+      "date": "Sep 2024 - Nov 2024"
+    },
+    {
+      "title": "Hireza",
+      "technologies": {
+        "label": "Technologies used:",
+        "items": "MERN Stack, OpenAI API, resume parser"
+      },
+      "role": "Developer",
+      "achievements": [
+        "Inreased efficiency of hiring process by 20%",
+        "Implemented AI-powered candidate matching algorithm achieving 60% accuracy in job recommendations"
+      ],
+      "date": "Feb 2024 - Feb 2024"
+    },
+    {
+      "title": "SwiftAid",
+      "technologies": {
+        "label": "Technologies used:",
+        "items": "MERN Stack, OpenAI API, Maps API"
+      },
+      "role": "Developer",
+      "achievements": [
+        "Developed emergency response platform decreasing patient wait times 25% through real-time location tracking",
+        "Integrated AI-powered assistance system for first aid and emergency response by standers"
+      ],
+      "date": "Mar 2024 - Mar 2024"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Advanced React - Meta Coursera",
+      "date": " "
+    },
+    {
+      "title": "Prompt Engineering - Coursera",
+      "date": " "
+    }
+  ],
+  "achievements": [
+    "Secured 1st position in CipherThon hackathon for developing Hireza, an AI-powered job matching platform",
+    "Finalist for Medha 2024 Hackathon with Thrombocizer Device National Level out of 25+ top colleges"
+  ],
+  "skills": [
+    {
+      "category": "Core Proficiencies",
+      "items": "TypeScript, JavaScript, C++, Node.js, Git, Docker, Server Management"
+    },
+    {
+      "category": "Programming Languages",
+      "items": "C#, TypeScript, JavaScript, C++, Python"
+    },
+    {
+      "category": "Back-End Technologies",
+      "items": "Nest.js, Node.js, Express.js, MongoDB, PostgreSQL"
+    },
+    {
+      "category": "Front-End Development",
+      "items": "NextJS, Astro.js, React.js, HTML, TailwindCSS"
+    },
+    {
+      "category": "Databases",
+      "items": "MongoDB, SQL, Redis"
+    },
+    {
+      "category": "DevOps",
+      "items": "Git, Docker, AWS"
+    },
+    {
+      "category": "Microcontrollers",
+      "items": "ESP32, Arduino, ESP8266"
+    },
+    {
+      "category": "Operating Systems",
+      "items": "Mac, Ubuntu, Windows"
+    },
+    {
+      "category": "Soft Skills",
+      "items": "Teamwork, Leadership, Time Management, Adaptability, Critical Thinking, Organizational Skills"
+    }
+  ]
+}

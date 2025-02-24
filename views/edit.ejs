@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Resume</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="themeToggle" class="theme-toggle">
+        <span class="light-icon">🌞</span>
+        <span class="dark-icon">🌙</span>
+      </button>
+      <h1>Edit Your Resume</h1>
+      <form id="resumeForm">
+        <input
+          type="hidden"
+          name="selectedTemplate"
+          value="<%= resume.selectedTemplate %>"
+        />
+        <div class="section">
+          <h2>Basic Information</h2>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="<%= resume.name %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="title">Professional Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              value="<%= resume.title %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="summary">Professional Summary</label>
+            <textarea id="summary" name="summary">
+<%= resume.summary %></textarea
+            >
+          </div>
+
+          <h3>Contact Information</h3>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="contacts.email"
+              value="<%= resume.contacts.email %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="contacts.phone"
+              value="<%= resume.contacts.phone %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="linkedin">LinkedIn</label>
+            <input
+              type="text"
+              id="linkedin"
+              name="contacts.linkedin"
+              value="<%= resume.contacts.linkedin %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="github">GitHub</label>
+            <input
+              type="text"
+              id="github"
+              name="contacts.github"
+              value="<%= resume.contacts.github %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="contacts.website"
+              value="<%= resume.contacts.website %>"
+            />
+          </div>
+        </div>
+
+        <div class="section" id="educationSection">
+          <h2>Education</h2>
+          <div id="educationEntries">
+            <% resume.educations.forEach((edu, index) => { %>
+            <div class="education-entry">
+              <div class="form-group">
+                <label>Degree</label>
+                <input
+                  type="text"
+                  name="educations[<%= index %>].degree"
+                  value="<%= edu.degree %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Major</label>
+                <input
+                  type="text"
+                  name="educations[<%= index %>].major"
+                  value="<%= edu.major %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>School</label>
+                <input
+                  type="text"
+                  name="educations[<%= index %>].school"
+                  value="<%= edu.school %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Date</label>
+                <input
+                  type="text"
+                  name="educations[<%= index %>].date"
+                  value="<%= edu.date %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>GPA</label>
+                <input
+                  type="text"
+                  name="educations[<%= index %>].gpa"
+                  value="<%= edu.gpa %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Location</label>
+                <input
+                  type="text"
+                  name="educations[<%= index %>].location"
+                  value="<%= edu.location %>"
+                />
+              </div>
+              <button
+                type="button"
+                onclick="this.parentElement.remove()"
+                class="btn-secondary"
+              >
+                Remove
+              </button>
+            </div>
+            <% }); %>
+          </div>
+          <button type="button" onclick="addEducation()" class="btn-secondary">
+            Add Education
+          </button>
+        </div>
+
+        <div class="section" id="experienceSection">
+          <h2>Experience</h2>
+          <div id="experienceEntries">
+            <% resume.experience.forEach((exp, index) => { %>
+            <div class="experience-entry">
+              <div class="form-group">
+                <label>Role</label>
+                <input
+                  type="text"
+                  name="experience[<%= index %>].role"
+                  value="<%= exp.role %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input
+                  type="text"
+                  name="experience[<%= index %>].company"
+                  value="<%= exp.company %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Date</label>
+                <input
+                  type="text"
+                  name="experience[<%= index %>].date"
+                  value="<%= exp.date %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Location</label>
+                <input
+                  type="text"
+                  name="experience[<%= index %>].location"
+                  value="<%= exp.location %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Technologies</label>
+                <input
+                  type="text"
+                  name="experience[<%= index %>].technologies.items"
+                  value="<%= exp.technologies.items %>"
+                />
+              </div>
+              <div id="achievements<%= index %>" class="achievements-list">
+                <label>Achievements</label>
+                <% exp.achievements.forEach((achievement, achIndex) => { %>
+                <div class="achievement-entry">
+                  <input
+                    type="text"
+                    name="experience[<%= index %>].achievements[]"
+                    value="<%= achievement %>"
+                  />
+                  <button
+                    type="button"
+                    onclick="this.parentElement.remove()"
+                    class="btn-secondary"
+                  >
+                    Remove
+                  </button>
+                </div>
+                <% }); %>
+              </div>
+              <button
+                type="button"
+                onclick="addAchievement('<%- index %>')"
+                class="btn-secondary"
+              >
+                Add Achievement
+              </button>
+              <button
+                type="button"
+                onclick="this.parentElement.remove()"
+                class="btn-secondary"
+              >
+                Remove Entry
+              </button>
+            </div>
+            <% }); %>
+          </div>
+          <button type="button" onclick="addExperience()" class="btn-secondary">
+            Add Experience
+          </button>
+        </div>
+
+        <div class="section" id="skillsSection">
+          <h2>Skills</h2>
+          <div id="skillEntries">
+            <% resume.skills.forEach((skill, index) => { %>
+            <div class="skill-entry">
+              <div class="form-group">
+                <label>Category</label>
+                <input
+                  type="text"
+                  name="skills[<%= index %>].category"
+                  value="<%= skill.category %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Items</label>
+                <input
+                  type="text"
+                  name="skills[<%= index %>].items"
+                  value="<%= skill.items %>"
+                />
+              </div>
+              <button
+                type="button"
+                onclick="this.parentElement.remove()"
+                class="btn-secondary"
+              >
+                Remove
+              </button>
+            </div>
+            <% }); %>
+          </div>
+          <button type="button" onclick="addSkill()" class="btn-secondary">
+            Add Skill
+          </button>
+        </div>
+
+        <div class="section" id="projectsSection">
+          <h2>Projects</h2>
+          <div id="projectEntries">
+            <% resume.projects.forEach((project, index) => { %>
+            <div class="project-entry">
+              <div class="form-group">
+                <label>Title</label>
+                <input
+                  type="text"
+                  name="projects[<%= index %>].title"
+                  value="<%= project.title %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Role</label>
+                <input
+                  type="text"
+                  name="projects[<%= index %>].role"
+                  value="<%= project.role %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Date</label>
+                <input
+                  type="text"
+                  name="projects[<%= index %>].date"
+                  value="<%= project.date %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Technologies</label>
+                <input
+                  type="text"
+                  name="projects[<%= index %>].technologies.items"
+                  value="<%= project.technologies.items %>"
+                />
+              </div>
+              <div
+                id="projectAchievements<%= index %>"
+                class="achievements-list"
+              >
+                <label>Achievements</label>
+                <% project.achievements.forEach((achievement) => { %>
+                <div class="achievement-entry">
+                  <input
+                    type="text"
+                    name="projects[<%= index %>].achievements[]"
+                    value="<%= achievement %>"
+                  />
+                  <button
+                    type="button"
+                    onclick="this.parentElement.remove()"
+                    class="btn-secondary"
+                  >
+                    Remove
+                  </button>
+                </div>
+                <% }); %>
+              </div>
+              <button
+                type="button"
+                onclick="addProjectAchievement('<%- index %>')"
+                class="btn-secondary"
+              >
+                Add Achievement
+              </button>
+              <button
+                type="button"
+                onclick="this.parentElement.remove()"
+                class="btn-secondary"
+              >
+                Remove Project
+              </button>
+            </div>
+            <% }); %>
+          </div>
+          <button type="button" onclick="addProject()" class="btn-secondary">
+            Add Project
+          </button>
+        </div>
+
+        <div class="section" id="certificationsSection">
+          <h2>Certifications</h2>
+          <div id="certificationEntries">
+            <% resume.certifications.forEach((cert, index) => { %>
+            <div class="certification-entry">
+              <div class="form-group">
+                <label>Title</label>
+                <input
+                  type="text"
+                  name="certifications[<%= index %>].title"
+                  value="<%= cert.title %>"
+                />
+              </div>
+              <div class="form-group">
+                <label>Date</label>
+                <input
+                  type="text"
+                  name="certifications[<%= index %>].date"
+                  value="<%= cert.date %>"
+                />
+              </div>
+              <button
+                type="button"
+                onclick="this.parentElement.remove()"
+                class="btn-secondary"
+              >
+                Remove
+              </button>
+            </div>
+            <% }); %>
+          </div>
+          <button
+            type="button"
+            onclick="addCertification()"
+            class="btn-secondary"
+          >
+            Add Certification
+          </button>
+        </div>
+
+        <div class="section" id="achievementsSection">
+          <h2>Achievements</h2>
+          <div id="achievementEntries">
+            <% resume.achievements.forEach((achievement, index) => { %>
+            <div class="achievement-entry">
+              <input
+                type="text"
+                name="achievements[]"
+                value="<%= achievement %>"
+              />
+              <button
+                type="button"
+                onclick="this.parentElement.remove()"
+                class="btn-secondary"
+              >
+                Remove
+              </button>
+            </div>
+            <% }); %>
+          </div>
+          <button
+            type="button"
+            onclick="addGeneralAchievement()"
+            class="btn-secondary"
+          >
+            Add Achievement
+          </button>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Generate Resume</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="downloadJSON()"
+          >
+            Export Data
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="clearSavedData()"
+          >
+            Clear Saved Data
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="/js/script.js"></script>
+    <script src="/js/form.js"></script>
+  </body>
+</html>
