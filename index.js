@@ -17,7 +17,7 @@ async function generateDocx(data, res) {
     const templateFile = data.selectedTemplate || "general-template.docx";
 
     // Load your existing template
-    const content = readFileSync(resolve(__dirname, `./${templateFile}`));
+    const content = readFileSync(resolve(`./public/templates/${templateFile}`));
 
     const zip = new PizZip(content);
     const doc = new Docxtemplater(zip, {
