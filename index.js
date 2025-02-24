@@ -1,11 +1,10 @@
 import PizZip from "pizzip";
 import Docxtemplater from "docxtemplater";
-import { readFileSync, writeFileSync } from "fs";
+import fs, { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import path, { dirname, resolve } from "path";
 import express from "express";
 import bodyParser from "body-parser";
-import fs from "fs";
 
 // Get current file's directory
 const __filename = fileURLToPath(import.meta.url);
