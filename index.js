@@ -72,6 +72,7 @@ async function generateDocx(data, res) {
 }
 
 const app = express();
+app.use(express.static("public"));
 
 // Set EJS as templating engine
 app.set("view engine", "ejs");
@@ -80,7 +81,6 @@ app.set("views", path.join(__dirname, "views"));
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
 
 // Routes
 app.get("/", (req, res) => {
